@@ -1,3 +1,10 @@
+import clsx from "clsx";
+import {
+  PreventFlashOnWrongTheme,
+  ThemeProvider,
+  useTheme,
+} from "remix-themes";
+
 import type { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
 import {
   Links,
@@ -8,15 +15,10 @@ import {
   useLoaderData,
 } from "@remix-run/react";
 
-import "./tailwind.css";
-import clsx from "clsx";
-import {
-  PreventFlashOnWrongTheme,
-  ThemeProvider,
-  useTheme,
-} from "remix-themes";
 import { SwitchTheme } from "./components/ui/switch-theme";
 import { themeSessionResolver } from "./sessions.server";
+
+import "./tailwind.css";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },

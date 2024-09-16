@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+
 import { ModeToggle } from "~/components/ui/mode-toggle";
 
 export const meta: MetaFunction = () => {

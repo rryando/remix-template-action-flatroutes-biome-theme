@@ -1,5 +1,6 @@
 import { Moon, Sun } from "lucide-react";
 import { Theme, useTheme } from "remix-themes";
+
 import { Switch } from "./switch";
 
 export const SwitchTheme = () => {
