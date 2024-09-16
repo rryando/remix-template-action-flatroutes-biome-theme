@@ -58,9 +58,9 @@
     "node": ">=20.0.0"
   },
   "lint-staged": {
-    "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
-      "yarn lint:fix",
-      "yarn format",
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint . --ext ts,tsx,js --fix --max-warnings=5",
+      "prettier --write",
       "biome check --write --organize-imports-enabled=false --no-errors-on-unmatched",
       "biome check --write --unsafe --no-errors-on-unmatched",
       "biome format --write --no-errors-on-unmatched",
