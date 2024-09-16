@@ -6,8 +6,9 @@
   "scripts": {
     "build": "remix vite:build",
     "dev": "remix vite:dev",
-    "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
-    "lint:fix": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint . --ext ts,tsx,js --fix --max-warnings=5",
+    "lint": "tsc --noEmit -p tsconfig.json && biome lint --diagnostic-level=error --no-errors-on-unmatched",
+    "lint:fix": "biome check --apply-unsafe",
+    "lint:staged": "biome check --error-on-warnings --no-errors-on-unmatched --staged",
     "start": "remix-serve ./build/server/index.js",
     "format": "biome format --write --no-errors-on-unmatched",
     "typecheck": "tsc",
@@ -63,10 +64,9 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "yarn lint:fix",
-      "biome check --write --organize-imports-enabled=true --no-errors-on-unmatched",
-      "biome check --write --unsafe --no-errors-on-unmatched",
-      "biome format --write --no-errors-on-unmatched",
-      "biome lint --write --no-errors-on-unmatched"
+      "yarn lint:staged",
+      "yarn format",
+      "biome check --write --organize-imports-enabled=true --no-errors-on-unmatched"
     ]
   }
 }
