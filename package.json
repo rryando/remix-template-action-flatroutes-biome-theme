@@ -62,8 +62,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint . --ext ts,tsx,js --fix --max-warnings=5",
-      "prettier --write",
+      "yarn lint:fix",
       "biome check --write --organize-imports-enabled=false --no-errors-on-unmatched",
       "biome check --write --unsafe --no-errors-on-unmatched",
       "biome format --write --no-errors-on-unmatched",
