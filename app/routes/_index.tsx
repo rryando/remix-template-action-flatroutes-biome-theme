@@ -17,7 +17,7 @@ export default function Index() {
           <h1 className="leading text-2xl font-bold text-gray-800 dark:text-gray-100">
             Welcome to{" "}
             <span className="sr-only">
-              Remix - test- will delete this later
+              Remix - test- will delete this later - test protect main branch
             </span>
           </h1>
           <div className="h-[144px] w-[434px]">
