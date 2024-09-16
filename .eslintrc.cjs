@@ -20,7 +20,11 @@ module.exports = {
     es6: true,
   },
   ignorePatterns: ["!**/.server", "!**/.client"],
-
+  plugins: [
+    'simple-import-sort',
+    'unused-imports',
+    'security',
+  ],
   // Base config
   extends: ["eslint:recommended"],
 
