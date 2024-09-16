@@ -26,8 +26,8 @@ jobs:
       - name: ⎔ Setup node
         uses: actions/setup-node@v4
         with:
-          node-version-file: ".nvmrc"
-          cache: "yarn"
+          node-version: '20'
+          cache: 'yarn'
 
       - name: ⚙️ Deduplicate yarn.lock
         run: npx yarn-deduplicate && rm -rf ./node_modules && yarn
