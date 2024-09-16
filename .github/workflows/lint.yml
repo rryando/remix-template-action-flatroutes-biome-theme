@@ -21,8 +21,8 @@ jobs:
       - name: ⎔ Setup node
         uses: actions/setup-node@v4
         with:
-          node-version-file: ".nvmrc"
-          cache: "yarn"
+          node-version: '20'  # Specify the Node.js version you want to use
+          cache: 'yarn'
 
       - name: 📥 Install deps
         run: yarn --frozen-lockfile
